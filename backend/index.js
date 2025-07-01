@@ -8,7 +8,7 @@ import cookieParser from "cookie-parser"
 import userRouter from "./routes/user.routes.js"
 import geminiResponse from "./gemini.js"
 
-
+const app = express()
 const allowedOrigins = [
   "http://localhost:5173",
   "https://jarvis-backend-xyxe.onrender.com", // ✅ Your actual frontend Render URL
