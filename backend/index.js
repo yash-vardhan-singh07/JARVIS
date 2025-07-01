@@ -9,10 +9,9 @@ import userRouter from "./routes/user.routes.js"
 import geminiResponse from "./gemini.js"
 
 
-const app=express()
-const allowedOrigins = [ 
-  "http://localhost:5173",                     // local dev
-  "https://jarvis-backend-xyxe.onrender.com"   // production URL of frontend
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://jarvis-backend-xyxe.onrender.com", // ✅ Your actual frontend Render URL
 ];
 
 app.use(cors({
@@ -25,6 +24,7 @@ app.use(cors({
   },
   credentials: true,
 }));
+
 
 const port=process.env.PORT || 5000
 app.use(express.json())
