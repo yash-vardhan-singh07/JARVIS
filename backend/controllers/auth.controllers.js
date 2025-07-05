@@ -51,12 +51,13 @@ try {
 
     const token=await genToken(user._id)
 
-    res.cookie("token",token,{
-        httpOnly:true,
-       maxAge:7*24*60*60*1000,
-       sameSite:"strict",
-       secure:false
-    })
+   res.cookie("token", token, {
+     httpOnly: true,
+     maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+     sameSite: "None",               // ✅ Needed for cross-site cookie
+     secure: true                    // ✅ Required if sameSite: 'None'
+   });
+
 
     return res.status(200).json(user)
 
